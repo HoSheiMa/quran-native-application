@@ -1,0 +1,105 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+ProcessException: ProcessException: Process "C:\Users\HoSheiMa\Desktop\aq\android\gradlew.bat" exited abnormally:
+Exception in thread "main" java.lang.RuntimeException: Timeout of 120000 reached waiting for exclusive access to file: C:\Users\HoSheiMa\.gradle\wrapper\dists\gradle-4.10.2-all\9fahxiiecdb76a5g3aw9oi8rv\gradle-4.10.2-all.zip
+	at org.gradle.wrapper.ExclusiveFileAccessManager.access(ExclusiveFileAccessManager.java:61)
+	at org.gradle.wrapper.Install.createDist(Install.java:48)
+	at org.gradle.wrapper.WrapperExecutor.execute(WrapperExecutor.java:128)
+	at org.gradle.wrapper.GradleWrapperMain.main(GradleWrapperMain.java:61)
+  Command: C:\Users\HoSheiMa\Desktop\aq\android\gradlew.bat -v
+
+```
+#0      runCheckedAsync (package:flutter_tools/src/base/process.dart:251:5)
+<asynchronous suspension>
+#1      _initializeGradle (package:flutter_tools/src/android/gradle.dart:185:9)
+<asynchronous suspension>
+#2      _ensureGradle (package:flutter_tools/src/android/gradle.dart:166:37)
+<asynchronous suspension>
+#3      _readGradleProject (package:flutter_tools/src/android/gradle.dart:95:31)
+<asynchronous suspension>
+#4      _gradleProject (package:flutter_tools/src/android/gradle.dart:87:34)
+<asynchronous suspension>
+#5      getGradleAppOut (package:flutter_tools/src/android/gradle.dart:81:29)
+<asynchronous suspension>
+#6      AndroidApk.fromAndroidProject (package:flutter_tools/src/application_package.dart:96:23)
+<asynchronous suspension>
+#7      getApplicationPackageForPlatform (package:flutter_tools/src/application_package.dart:283:30)
+<asynchronous suspension>
+#8      FlutterDevice.runHot (package:flutter_tools/src/resident_runner.dart:269:21)
+<asynchronous suspension>
+#9      HotRunner.run (package:flutter_tools/src/run_hot.dart:272:39)
+<asynchronous suspension>
+#10     RunCommand.runCommand (package:flutter_tools/src/commands/run.dart:398:37)
+<asynchronous suspension>
+#11     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:401:18)
+#12     _asyncThenWrapperHelper.<anonymous closure> (dart:async/runtime/libasync_patch.dart:77:64)
+#13     _rootRunUnary (dart:async/zone.dart:1132:38)
+#14     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#15     _FutureListener.handleValue (dart:async/future_impl.dart:129:18)
+#16     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:642:45)
+#17     Future._propagateToListeners (dart:async/future_impl.dart:671:32)
+#18     Future._complete (dart:async/future_impl.dart:476:7)
+#19     _SyncCompleter.complete (dart:async/future_impl.dart:51:12)
+#20     _AsyncAwaitCompleter.complete (dart:async/runtime/libasync_patch.dart:28:18)
+#21     _completeOnAsyncReturn (dart:async/runtime/libasync_patch.dart:295:13)
+#22     RunCommand.usageValues (package:flutter_tools/src/commands/run.dart)
+#23     _asyncThenWrapperHelper.<anonymous closure> (dart:async/runtime/libasync_patch.dart:77:64)
+#24     _rootRunUnary (dart:async/zone.dart:1132:38)
+#25     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#26     _FutureListener.handleValue (dart:async/future_impl.dart:129:18)
+#27     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:642:45)
+#28     Future._propagateToListeners (dart:async/future_impl.dart:671:32)
+#29     Future._complete (dart:async/future_impl.dart:476:7)
+#30     _SyncCompleter.complete (dart:async/future_impl.dart:51:12)
+#31     _AsyncAwaitCompleter.complete.<anonymous closure> (dart:async/runtime/libasync_patch.dart:33:20)
+#32     _rootRun (dart:async/zone.dart:1124:13)
+#33     _CustomZone.run (dart:async/zone.dart:1021:19)
+#34     _CustomZone.bindCallback.<anonymous closure> (dart:async/zone.dart:947:23)
+#35     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#36     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#37     _runPendingImmediateCallback (dart:isolate/runtime/libisolate_patch.dart:115:13)
+#38     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:172:5)
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, v1.0.0, on Microsoft Windows [Version 10.0.17134.471], locale en-US)
+    [32m•[39m Flutter version 1.0.0 at C:\flutter\flutter
+    [32m•[39m Framework revision 5391447fae (2 weeks ago), 2018-11-29 19:41:26 -0800
+    [32m•[39m Engine revision 7375a0f414
+    [32m•[39m Dart version 2.1.0 (build 2.1.0-dev.9.4 f9ebf21297)
+
+[32m[✓][39m Android toolchain - develop for Android devices (Android SDK 28.0.3)
+    [32m•[39m Android SDK at C:\Users\HoSheiMa\AppData\Local\Android\sdk
+    [32m•[39m Android NDK location not configured (optional; useful for native profiling support)
+    [32m•[39m Platform android-28, build-tools 28.0.3
+    [32m•[39m Java binary at: C:\Program Files\Android\Android Studio1\jre\bin\java
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+    [32m•[39m All Android licenses accepted.
+
+[32m[✓][39m Android Studio (version 3.1)
+    [32m•[39m Android Studio at C:\Program Files\Android\Android Studio1
+    [32m•[39m Flutter plugin version 29.0.1
+    [32m•[39m Dart plugin version 173.4700
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+
+[32m[✓][39m VS Code (version 1.30.0)
+    [32m•[39m VS Code at C:\Users\HoSheiMa\AppData\Local\Programs\Microsoft VS Code
+    [32m•[39m Flutter extension version 2.21.1
+
+[32m[✓][39m VS Code, 64-bit edition
+    [32m•[39m VS Code at C:\Program Files\Microsoft VS Code
+    [32m•[39m Flutter extension version 2.21.1
+
+[32m[✓][39m Connected device (1 available)
+    [32m•[39m Android SDK built for x86 • emulator-5554 • android-x86 • Android 7.1.1 (API 25) (emulator)
+
+[32m•[39m No issues found!
+```

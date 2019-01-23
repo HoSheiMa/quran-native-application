@@ -1,0 +1,103 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter packages get
+
+## exception
+
+YamlException: Error on line 59, column 21: Mapping values are not allowed here. Did you miss a colon earlier?
+            - family: pdms-saleem-quranfont
+                    ^
+
+```
+#0      Scanner._fetchValue (package:yaml/src/scanner.dart:713:9)
+#1      Scanner._fetchNextToken (package:yaml/src/scanner.dart:457:11)
+#2      Scanner._fetchMoreTokens (package:yaml/src/scanner.dart:339:7)
+#3      Scanner.peek (package:yaml/src/scanner.dart:317:27)
+#4      Parser._parseBlockMappingKey (package:yaml/src/parser.dart:418:26)
+#5      Parser._stateMachine (package:yaml/src/parser.dart:86:16)
+#6      Parser.parse (package:yaml/src/parser.dart:47:19)
+#7      Loader._loadMapping (package:yaml/src/loader.dart:171:23)
+#8      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#9      Loader._loadSequence (package:yaml/src/loader.dart:141:20)
+#10     Loader._loadNode (package:yaml/src/loader.dart:84:16)
+#11     Loader._loadMapping (package:yaml/src/loader.dart:165:19)
+#12     Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#13     Loader._loadSequence (package:yaml/src/loader.dart:141:20)
+#14     Loader._loadNode (package:yaml/src/loader.dart:84:16)
+#15     Loader._loadMapping (package:yaml/src/loader.dart:165:19)
+#16     Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#17     Loader._loadMapping (package:yaml/src/loader.dart:165:19)
+#18     Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#19     Loader._loadDocument (package:yaml/src/loader.dart:62:20)
+#20     Loader.load (package:yaml/src/loader.dart:54:20)
+#21     loadYamlDocument (package:yaml/yaml.dart:51:25)
+#22     loadYamlNode (package:yaml/yaml.dart:42:5)
+#23     loadYaml (package:yaml/yaml.dart:34:5)
+#24     FlutterManifest.createFromString (package:flutter_tools/src/flutter_manifest.dart:42:28)
+<asynchronous suspension>
+#25     FlutterManifest.createFromPath (package:flutter_tools/src/flutter_manifest.dart:36:12)
+<asynchronous suspension>
+#26     FlutterProject._readManifest (package:flutter_tools/src/project.dart:128:60)
+<asynchronous suspension>
+#27     FlutterProject.fromDirectory (package:flutter_tools/src/project.dart:42:44)
+<asynchronous suspension>
+#28     FlutterProject.fromPath (package:flutter_tools/src/project.dart:57:58)
+#29     PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:83:61)
+<asynchronous suspension>
+#30     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:401:18)
+#31     _asyncThenWrapperHelper.<anonymous closure> (dart:async/runtime/libasync_patch.dart:77:64)
+#32     _rootRunUnary (dart:async/zone.dart:1132:38)
+#33     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#34     _FutureListener.handleValue (dart:async/future_impl.dart:129:18)
+#35     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:642:45)
+#36     Future._propagateToListeners (dart:async/future_impl.dart:671:32)
+#37     Future._complete (dart:async/future_impl.dart:476:7)
+#38     _SyncCompleter.complete (dart:async/future_impl.dart:51:12)
+#39     _AsyncAwaitCompleter.complete.<anonymous closure> (dart:async/runtime/libasync_patch.dart:33:20)
+#40     _rootRun (dart:async/zone.dart:1124:13)
+#41     _CustomZone.run (dart:async/zone.dart:1021:19)
+#42     _CustomZone.bindCallback.<anonymous closure> (dart:async/zone.dart:947:23)
+#43     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#44     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#45     _runPendingImmediateCallback (dart:isolate/runtime/libisolate_patch.dart:115:13)
+#46     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:172:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, v1.0.0, on Microsoft Windows [Version 10.0.17134.472], locale en-US)
+    • Flutter version 1.0.0 at C:\flutter\flutter
+    • Framework revision 5391447fae (5 weeks ago), 2018-11-29 19:41:26 -0800
+    • Engine revision 7375a0f414
+    • Dart version 2.1.0 (build 2.1.0-dev.9.4 f9ebf21297)
+
+[✓] Android toolchain - develop for Android devices (Android SDK 28.0.3)
+    • Android SDK at C:\Users\HoSheiMa\AppData\Local\Android\sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-28, build-tools 28.0.3
+    • Java binary at: C:\Program Files\Android\Android Studio1\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+    • All Android licenses accepted.
+
+[✓] Android Studio (version 3.1)
+    • Android Studio at C:\Program Files\Android\Android Studio1
+    • Flutter plugin version 29.0.1
+    • Dart plugin version 173.4700
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+
+[✓] VS Code (version 1.30.1)
+    • VS Code at C:\Users\HoSheiMa\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 2.21.1
+
+[✓] VS Code, 64-bit edition
+    • VS Code at C:\Program Files\Microsoft VS Code
+    • Flutter extension version 2.21.1
+
+[✓] Connected device (1 available)
+    • SM N950F • 127.0.0.1:62001 • android-x86 • Android 4.4.2 (API 19)
+
+• No issues found!
+```
